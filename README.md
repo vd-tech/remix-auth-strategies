@@ -16,9 +16,9 @@ This repository provides a set of pre-built strategies for use with Remix Auth, 
 Install the package using your preferred package manager:
 
 ```bash
-npm install @vd-tech/remix-auth-strategies
+npm install @vdtech/remix-auth-strategies
 # or
-yarn add @vd-tech/remix-auth-strategies
+yarn add @vdtech/remix-auth-strategies
 ```
 
 ## Usage
@@ -26,7 +26,7 @@ yarn add @vd-tech/remix-auth-strategies
 ### Azure AD B2C Strategy
 
 ```typescript
-import { AzureB2CStrategy } from "@vd-tech/remix-auth-strategies";
+import { AzureB2CStrategy } from "@vdtech/remix-auth-strategies";
 
 const azureStrategy = new AzureB2CStrategy(
   {
@@ -49,7 +49,7 @@ const azureStrategy = new AzureB2CStrategy(
 ### Auth0 Strategy
 
 ```typescript
-import { Auth0Strategy } from "@vd-tech/remix-auth-strategies";
+import { Auth0Strategy } from "@vdtech/remix-auth-strategies";
 
 const auth0Strategy = new Auth0Strategy(
   {

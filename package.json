@@ -3,11 +3,11 @@
 	"version": "0.0.0",
 	"description": "A collection of authentication strategies for Remix Auth, designed to simplify the integration of various OAuth2 providers.",
 	"license": "MIT",
-	"funding": ["https://github.com/sponsors/sergiodxa"],
+	"funding": ["https://github.com/sponsors/paul-vd"],
 	"author": {
-		"name": "Sergio Xalambrí",
-		"email": "hello+oss@sergiodxa.com",
-		"url": "https://sergiodxa.com"
+		"name": "Paul van Dyk",
+		"email": "paul@vandyk.fr",
+		"url": "https://vandyk.fr"
 	},
 	"repository": {
 		"type": "git",

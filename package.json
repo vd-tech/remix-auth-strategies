@@ -1,9 +1,11 @@
 {
 	"name": "@vdtech/remix-auth-strategies",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "A collection of authentication strategies for Remix Auth, designed to simplify the integration of various OAuth2 providers.",
 	"license": "MIT",
-	"funding": ["https://github.com/sponsors/paul-vd"],
+	"funding": [
+		"https://github.com/sponsors/paul-vd"
+	],
 	"author": {
 		"name": "Paul van Dyk",
 		"email": "paul@vandyk.fr",
@@ -24,7 +26,13 @@
 	"npm": {
 		"registry": "https://registry.npmjs.org/"
 	},
-	"keywords": ["remix", "remix-auth", "auth", "authentication", "strategy"],
+	"keywords": [
+		"remix",
+		"remix-auth",
+		"auth",
+		"authentication",
+		"strategy"
+	],
 	"scripts": {
 		"build": "tsc",
 		"typecheck": "tsc --noEmit",
@@ -37,7 +45,11 @@
 	"engines": {
 		"node": ">=20.0.0"
 	},
-	"files": ["build", "package.json", "README.md"],
+	"files": [
+		"build",
+		"package.json",
+		"README.md"
+	],
 	"exports": {
 		"./azure": "./build/azure.js",
 		"./auth0": "./build/auth0.js",

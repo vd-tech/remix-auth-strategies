@@ -1,7 +1,7 @@
 {
 	"$schema": "https://typedoc.org/schema.json",
 	"includeVersion": true,
-	"entryPoints": ["./src/index.ts"],
+	"entryPoints": ["./src/azure.ts", "./src/auth0.ts"],
 	"out": "docs",
 	"json": "docs/index.json",
 	"cleanOutputDir": true,

@@ -1,48 +1,90 @@
-# Remix Auth - Strategy Template
+# Remix Auth - Strategies
 
-> A template for creating a new Remix Auth strategy.
+> A collection of authentication strategies for Remix Auth, designed to simplify the integration of various OAuth2 providers.
 
-If you want to create a new strategy for Remix Auth, you could use this as a template for your repository.
+This repository provides a set of pre-built strategies for use with Remix Auth, allowing developers to easily integrate authentication with popular OAuth2 providers like Azure AD B2C and Auth0. Each strategy is designed to be flexible and customizable, supporting a wide range of use cases and configurations.
 
-The repo installs the latest version of Remix Auth and do the setup for you to have tests, linting and typechecking.
+## Features
 
-## How to use it
+- **Multiple Strategies**: Includes strategies for Azure AD B2C and Auth0, with more to come.
+- **Customizable**: Easily configure scopes, prompts, and other OAuth2 parameters.
+- **TypeScript Support**: Fully typed for a better development experience.
+- **Tested**: Each strategy comes with a comprehensive suite of tests to ensure reliability.
 
-1. In the `package.json` change `name` to your strategy name, also add a description and ideally an author, repository and homepage keys.
-2. In `src/index.ts` change the `MyStrategy` for the strategy name you want to use.
-3. Implement the strategy flow inside the `authenticate` method. Use `this.success` and `this.failure` to correctly send finish the flow.
-4. In `tests/index.test.ts` change the tests to use your strategy and test it. Inside the tests you have access to `jest-fetch-mock` to mock any fetch you may need to do.
-5. Once you are ready, set the secrets on Github
-   - `NPM_TOKEN`: The token for the npm registry
-   - `GIT_USER_NAME`: The git username you want the bump workflow to use in the commit.
-   - `GIT_USER_EMAIL`: The email you want the bump workflow to use in the commit.
+## Installation
 
-## Scripts
+Install the package using your preferred package manager:
 
-- `build`: Build the project for production using the TypeScript compiler (strips the types).
-- `typecheck`: Check the project for type errors, this also happens in build but it's useful to do in development.
-- `lint`: Runs ESLint against the source codebase to ensure it pass the linting rules.
-- `test`: Runs all the test using Jest.
+```bash
+npm install @vd-tech/remix-auth-strategies
+# or
+yarn add @vd-tech/remix-auth-strategies
+```
 
-## Documentations
+## Usage
 
-To facilitate creating a documentation for your strategy, you can use the following Markdown
+### Azure AD B2C Strategy
 
-```markdown
-# Strategy Name
+```typescript
+import { AzureB2CStrategy } from "@vd-tech/remix-auth-strategies";
 
-<!-- Description -->
+const azureStrategy = new AzureB2CStrategy(
+  {
+    domain: "your-tenant.b2clogin.com",
+    tenant: "your-tenant",
+    policy: "B2C_1_signin",
+    clientId: "your-client-id",
+    clientSecret: "your-client-secret",
+    redirectURI: "http://localhost:3000/auth/callback",
+    scopes: ["openid", "profile", "offline_access"],
+    prompt: "login",
+  },
+  async ({ profile }) => {
+    // Handle user verification here
+    return { id: profile.id, email: profile.emails[0].value };
+  }
+);
+```
 
-## Supported runtimes
+### Auth0 Strategy
+
+```typescript
+import { Auth0Strategy } from "@vd-tech/remix-auth-strategies";
+
+const auth0Strategy = new Auth0Strategy(
+  {
+    domain: "your-domain.auth0.com",
+    clientId: "your-client-id",
+    clientSecret: "your-client-secret",
+    redirectURI: "http://localhost:3000/auth/callback",
+    scopes: ["openid", "profile", "email"],
+  },
+  async ({ profile }) => {
+    // Handle user verification here
+    return { id: profile.id, email: profile.emails[0].value };
+  }
+);
+```
+
+## Supported Runtimes
 
 | Runtime    | Has Support |
 | ---------- | ----------- |
 | Node.js    | ✅          |
 | Cloudflare | ✅          |
 
-<!-- If it doesn't support one runtime, explain here why -->
+## Contributing
 
-## How to use
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
 
-<!-- Explain how to use the strategy, here you should tell what options it expects from the developer when instantiating the strategy -->
-```
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Maintainers
+
+- [Paul van Dyk](https://github.com/paul-vd)
+
+## Acknowledgments
+
+Special thanks to the Remix Auth community for their support and contributions.

@@ -1,7 +1,7 @@
 {
-	"name": "remix-auth-strategy-template",
+	"name": "@vd-tech/remix-auth-strategies",
 	"version": "0.0.0",
-	"description": "A description of the strategy",
+	"description": "A collection of authentication strategies for Remix Auth, designed to simplify the integration of various OAuth2 providers.",
 	"license": "MIT",
 	"funding": ["https://github.com/sponsors/sergiodxa"],
 	"author": {
@@ -11,11 +11,11 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/sergiodxa/remix-auth-strategy-template"
+		"url": "https://github.com/vd-tech/remix-auth-strategies"
 	},
-	"homepage": "https://sergiodxa.github.io/remix-auth-strategy-template",
+	"homepage": "https://github.com/vd-tech/remix-auth-strategies",
 	"bugs": {
-		"url": "https://github.com/sergiodxa/remix-auth-strategy-template/issues"
+		"url": "https://github.com/vd-tech/remix-auth-strategies/issues"
 	},
 	"keywords": ["remix", "remix-auth", "auth", "authentication", "strategy"],
 	"scripts": {
@@ -32,12 +32,13 @@
 	},
 	"files": ["build", "package.json", "README.md"],
 	"exports": {
-		".": "./build/index.js",
+		"./azure": "./build/azure.js",
+		"./auth0": "./build/auth0.js",
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
-		"react-router": "^7.0.2",
-		"remix-auth": "^4.0.0"
+		"remix-auth": "^4.0.0",
+		"remix-auth-oauth2": "^3.1.0"
 	},
 	"peerDependencies": {},
 	"devDependencies": {
@@ -46,6 +47,7 @@
 		"@total-typescript/tsconfig": "^1.0.4",
 		"@types/bun": "^1.1.6",
 		"consola": "^3.2.3",
+		"msw": "^2.6.7",
 		"typedoc": "^0.26.5",
 		"typedoc-plugin-mdn-links": "^3.2.6",
 		"typescript": "^5.5.4"

@@ -29,8 +29,8 @@ jobs:
           node-version: "lts/*"
 
       - run: |
-          git config user.name 'Sergio Xalambrí'
-          git config user.email 'hello@sergiodxa.com'
+          git config user.name 'Paul van Dyk'
+          git config user.email 'paul@vandyk.fr'
 
       - run: npm version ${{ github.event.inputs.version }}
       - run: bun run quality:fix

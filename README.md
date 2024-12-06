@@ -23,12 +23,12 @@ yarn add @vdtech/remix-auth-strategies
 
 ## Usage
 
-### Azure AD B2C Strategy
+### Azure Strategy
 
 ```typescript
-import { AzureB2CStrategy } from "@vdtech/remix-auth-strategies";
+import { AzureStrategy } from "@vdtech/remix-auth-strategies";
 
-const azureStrategy = new AzureB2CStrategy(
+const azureStrategy = new AzureStrategy(
   {
     domain: "your-tenant.b2clogin.com",
     tenant: "your-tenant",

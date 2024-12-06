@@ -46,7 +46,7 @@ const azureStrategy = new AzureStrategy(
     scopes: ["openid", "profile", "offline_access"],
     prompt: "login",
   },
-  async ({ profile }) => {
+  async ({ tokens, request }) => {
     // Handle user verification here
     let user = await getUser(tokens, request);
     return { id: user.id, email: user.email };
@@ -67,7 +67,7 @@ const auth0Strategy = new Auth0Strategy(
     redirectURI: "http://localhost:3000/auth/callback",
     scopes: ["openid", "profile", "email"],
   },
-  async ({ profile }) => {
+  async ({ tokens, request }) => {
     // Handle user verification here
     let user = await getUser(tokens, request);
     return { id: user.id, email: user.email };

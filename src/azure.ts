@@ -53,7 +53,7 @@ export class AzureStrategy<User> extends OAuth2Strategy<User> {
 		);
 
 		this.scopes = options.scopes ?? ["openid", "profile", "offline_access"];
-		this.prompt = options.prompt ?? "none";
+		this.prompt = options.prompt;
 	}
 
 	protected override authorizationParams(params: URLSearchParams) {

@@ -1,6 +1,6 @@
 {
 	"name": "@vdtech/remix-auth-strategies",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "A collection of authentication strategies for Remix Auth, designed to simplify the integration of various OAuth2 providers.",
 	"license": "MIT",
 	"funding": [

@@ -33,7 +33,7 @@ yarn add @vdtech/remix-auth-strategies
 ### Azure Strategy
 
 ```typescript
-import { AzureStrategy } from "@vdtech/remix-auth-strategies";
+import { AzureStrategy } from "@vdtech/remix-auth-strategies/azure";
 
 const azureStrategy = new AzureStrategy(
   {
@@ -56,7 +56,7 @@ const azureStrategy = new AzureStrategy(
 ### Auth0 Strategy
 
 ```typescript
-import { Auth0Strategy } from "@vdtech/remix-auth-strategies";
+import { Auth0Strategy } from "@vdtech/remix-auth-strategies/auth0";
 
 const auth0Strategy = new Auth0Strategy(
   {

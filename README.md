@@ -48,7 +48,8 @@ const azureStrategy = new AzureStrategy(
   },
   async ({ profile }) => {
     // Handle user verification here
-    return { id: profile.id, email: profile.emails[0].value };
+    let user = await getUser(tokens, request);
+    return { id: user.id, email: user.email };
   }
 );
 ```
@@ -68,7 +69,8 @@ const auth0Strategy = new Auth0Strategy(
   },
   async ({ profile }) => {
     // Handle user verification here
-    return { id: profile.id, email: profile.emails[0].value };
+    let user = await getUser(tokens, request);
+    return { id: user.id, email: user.email };
   }
 );
 ```

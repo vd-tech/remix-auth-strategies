@@ -55,7 +55,7 @@
 		"@types/bun": "^1.1.6",
 		"consola": "^3.2.3",
 		"msw": "^2.6.7",
-		"typedoc": "^0.27.3",
+		"typedoc": "^0.28.0",
 		"typedoc-plugin-mdn-links": "^5.0.1",
 		"typescript": "^5.5.4"
 	}

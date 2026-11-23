@@ -44,7 +44,7 @@
 		"./package.json": "./package.json"
 	},
 	"dependencies": {
-		"remix-auth": "^4.0.0",
+		"remix-auth": "^5.0.0",
 		"remix-auth-oauth2": "^3.1.0"
 	},
 	"peerDependencies": {},
